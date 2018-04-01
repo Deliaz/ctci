@@ -1,0 +1,24 @@
+{
+  "name": "ctci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deliaz/ctci.git"
+  },
+  "author": "Deliaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Deliaz/ctci/issues"
+  },
+  "homepage": "https://github.com/Deliaz/ctci#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "mocha": "^5.0.5",
+    "chai": "4.1"
+  }
+}
