@@ -12,7 +12,7 @@ const NOT_UNIQUE_CASES = [
     'ClhebclaC'
 ];
 
-describe('1.1 isUnique', () => {
+describe('1.1 Is Unique', () => {
     it('should return true for string with unique characters', () => {
         UNIQUE_CASES.forEach(str => {
             expect(isUnique1(str)).to.be.true;
