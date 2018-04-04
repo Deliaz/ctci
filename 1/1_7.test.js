@@ -21,6 +21,15 @@ describe('1.7 Matrix rotation', () => {
             .to.be.deep.equal(
                             [[3,1],
                              [4,2]]);
+
+        expect(rotateMatrix([[1,2,3],
+                             [1,2,3],
+                             [1,2,3]
+                             ]))
+            .to.be.deep.equal(
+                            [[1,1,1],
+                             [2,2,2],
+                             [3,3,3]]);
         // @formatter:on
     });
 
@@ -39,10 +48,19 @@ describe('1.7 Matrix rotation', () => {
 
         expect(rotateMatrix([[1,2],
                              [3,4]
-                             ], false))
+                             ], false)) // ccw
             .to.be.deep.equal(
                             [[2,4],
                              [1,3]]);
+
+        expect(rotateMatrix([[1,2,3],
+                             [1,2,3],
+                             [1,2,3]
+                             ], false)) // ccw
+            .to.be.deep.equal(
+                            [[3,3,3],
+                             [2,2,2],
+                             [1,1,1]]);
         // @formatter:on
     });
 
