@@ -1,8 +1,6 @@
 module.exports = {
 
-
     /*
-
     Matrix example (3x3):
     [[int, int, int],
      [int, int, int],
@@ -10,6 +8,12 @@ module.exports = {
      [int, int, int]]
      */
 
+    /**
+     * Rotation in place, by indexes
+     * @param mtx
+     * @param clockWise
+     * @returns {*}
+     */
     rotateMatrix(mtx, clockWise = true) {
         if (!mtx || !mtx.length || mtx.length !== mtx[0].length) {
             return null;
@@ -35,10 +39,10 @@ module.exports = {
                 }
                 // Counter ClockWise rotation
                 else {
-                    mtx[i][j] = mtx[j][last - i]; // 1 - 4
-                    mtx[j][last - i] = mtx[last - i][last - j]; // 4 - 16
-                    mtx[last - i][last - j] = mtx[last - j][i]; // 16 - 13
-                    mtx[last - j][i] = temp; // 13 - 1
+                    mtx[i][j] = mtx[j][last - i];
+                    mtx[j][last - i] = mtx[last - i][last - j];
+                    mtx[last - i][last - j] = mtx[last - j][i];
+                    mtx[last - j][i] = temp;
                 }
 
 
@@ -46,6 +50,45 @@ module.exports = {
         }
 
         return mtx;
-    }
+    },
 
+
+    /**
+     * Rotation into a new matrix, by array operations
+     * @param mtx
+     * @param clockWise
+     * @returns {*}
+     */
+    rotateMatrix2(mtx, clockWise = true) {
+        const out = [];
+
+        if (!mtx || !mtx.length || mtx.length !== mtx[0].length) {
+            return null;
+        }
+
+        if (mtx.length === 1) {
+            return mtx;
+        }
+
+        const side = mtx.length; // n
+
+        for (let i = 0; i < side; i++) {
+            const row = [];
+            for (let j = 0; j < side; j++) {
+                if (clockWise) {
+                    row.unshift(mtx[j][i]);
+                } else {
+                    row.push(mtx[j][i]);
+                }
+
+            }
+
+            if (clockWise) {
+                out.push(row);
+            } else {
+                out.unshift(row);
+            }
+        }
+        return out;
+    }
 };
