@@ -3,7 +3,7 @@ const {find, find2} = require('./2_2');
 const LinkedList = require('./LinkedList');
 
 
-describe('2.1 Remove Dups', () => {
+describe('2.2 Return Kth to the last', () => {
 
     // Find 1
     it('should return 2nd to last node (value 6)', () => {
