@@ -1,23 +1,25 @@
 const expect = require('chai').expect;
-const {removeDups} = require('./2_1');
+const {removeDups, removeDups2} = require('./2_1');
 const LinkedList = require('./LinkedList');
 
 
 describe('2.1 Remove Dups', () => {
-    const list = new LinkedList(1);
-    list.append(1);
-    list.append(2);
-    list.append(3);
-    list.append(3);
-    list.append(4);
-    list.append(5);
-    list.append(5);
-    list.append(6);
-    list.append(7);
-    list.append(7);
-    // list: 1 -> 1 -> 2 -> 3 -> 3 -> 4 -> 5 -> 5 -> 6 -> 7 -> 7
-
     it('should remove duplicates from linked list', () => {
+        const list = new LinkedList(1);
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.append(3);
+        list.append(4);
+        list.append(5);
+        list.append(5);
+        list.append(6);
+        list.append(7);
+        list.append(7);
+        // list: 1 -> 1 -> 2 -> 3 -> 3 -> 4 -> 5 -> 5 -> 6 -> 7 -> 7
+
+
+        // removeDups
         const uniqList = removeDups(list);
         let i = 1;
         let node = uniqList;
@@ -26,34 +28,65 @@ describe('2.1 Remove Dups', () => {
             expect(node.data).to.be.equal(i++);
             node = node.next;
         }
+
+        // removeDups2
+        const uniqList2 = removeDups2(list);
+        let j = 1;
+        let node2 = uniqList2;
+
+        while (node2.next) {
+            expect(node2.data).to.be.equal(j++);
+            node2 = node2.next;
+        }
     });
 
+    it('should remove duplicates from linked list', () => {
+        const list2 = new LinkedList(1);
+        list2.append(3);
+        list2.append(1);
+        list2.append(2);
+        list2.append(3);
+        list2.append(4);
+        list2.append(1);
+        list2.append(2);
+        list2.append(5);
 
-    const list2 = new LinkedList(1);
-    list2.append(3);
-    list2.append(1);
-    list2.append(2);
-    list2.append(3);
-    list2.append(4);
-    list2.append(1);
-    list2.append(2);
-    list2.append(5);
-
-    const res = removeDups(list2);
-    expect(JSON.parse(JSON.stringify(res))).to.be.deep.equal({
-        data: 1,
-        next: {
-            data: 3,
+        let clone = Object.assign({}, list2);
+        const res = removeDups(clone);
+        expect(JSON.parse(JSON.stringify(res))).to.be.deep.equal({
+            data: 1,
             next: {
-                data: 2,
+                data: 3,
                 next: {
-                    data: 4,
+                    data: 2,
                     next: {
-                        data: 5,
-                        next: null
+                        data: 4,
+                        next: {
+                            data: 5,
+                            next: null
+                        }
                     }
                 }
             }
-        }
+        });
+
+        clone = Object.assign({}, list2);
+        const res2 = removeDups2(clone);
+        expect(JSON.parse(JSON.stringify(res2))).to.be.deep.equal({
+            data: 1,
+            next: {
+                data: 3,
+                next: {
+                    data: 2,
+                    next: {
+                        data: 4,
+                        next: {
+                            data: 5,
+                            next: null
+                        }
+                    }
+                }
+            }
+        });
     });
 });
