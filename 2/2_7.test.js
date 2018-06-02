@@ -3,7 +3,7 @@ const {intersection1, intersection2} = require('./2_7');
 const LinkedList = require('./LinkedList');
 
 
-describe('2.6 Intersection', () => {
+describe('2.7 Intersection', () => {
 
     [intersection1, intersection2].forEach(intersection => {
         it('should return true two lists with intersection', () => {
