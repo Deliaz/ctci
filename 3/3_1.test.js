@@ -39,5 +39,11 @@ describe('3.1 N-Stacks in array', () => {
         expect(stack.peek(0)).to.be.equal(12);
         expect(stack.peek(1)).to.be.equal(22);
         expect(stack.peek(2)).to.be.equal(32);
+
+        // Drain the stack
+        expect(stack.pop(2)).to.be.equal(32);
+        expect(stack.pop(2)).to.be.equal(31);
+        expect(stack.pop(2)).to.be.undefined;
+        expect(stack.peek(2)).to.be.undefined;
     });
 });

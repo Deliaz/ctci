@@ -19,6 +19,12 @@ describe('3.3 Stack of Stacks', () => {
 
         // Check stack length after pop
         expect(stack._stack.length).to.be.equal(3);
+
+        // Drain the stack
+        for (let i = 6; i >= 1; i--) {
+            expect(stack.pop()).to.be.equal(i);
+        }
+        expect(stack.pop()).to.be.undefined;
     });
 
     it('should support "popAt" method', () => {

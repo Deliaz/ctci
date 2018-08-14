@@ -18,6 +18,9 @@ describe('1.1 Is Unique', () => {
             expect(isUnique1(str)).to.be.true;
             expect(isUnique2(str)).to.be.true;
             expect(isUnique3(str)).to.be.true;
+
+            // Cover branches
+            expect(isUnique1('')).to.be.true;
         });
     });
 
