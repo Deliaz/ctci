@@ -89,4 +89,9 @@ describe('2.1 Remove Dups', () => {
             }
         });
     });
+
+    it('should return null for wrong args', () => {
+        expect(removeDups()).to.be.equal(null);
+        expect(removeDups2()).to.be.equal(null);
+    });
 });

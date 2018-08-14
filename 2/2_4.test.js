@@ -67,5 +67,7 @@ describe('2.4 Partition', () => {
         });
     });
 
-
+    it('should return null for wrong args', () => {
+        expect(partition()).to.be.equal(null);
+    });
 });

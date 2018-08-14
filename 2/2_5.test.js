@@ -57,4 +57,40 @@ describe('2.5 Sum Lists', () => {
         })
     });
 
+    it('should sum two lists with diff length', () => {
+        const list1 = new LinkedList(7);
+        list1.append(1);
+        list1.append(6);
+
+        const list2 = new LinkedList(5);
+        list2.append(9);
+        list2.append(9);
+        list2.append(9); // This list is longer
+
+        const sum = sumLists(list1, list2);
+        expect(sum).to.be.deep.equal({
+            "next": {
+                "data": 2,
+                "next": {
+                    "data": 1,
+                    "next": {
+                        "data": 6,
+                        "next": {
+                            "data": 0,
+                            "next": {
+                                "data": 1,
+                                "next": null
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    });
+
+
+    it('should return null for wrong args', () => {
+        expect(sumLists()).to.be.equal(null);
+    });
+
 });

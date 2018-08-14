@@ -62,4 +62,9 @@ describe('1.8 Zero Matrix', () => {
 
         // @formatter:on
     });
+
+    it('should return null for empty matrix', () => {
+        expect(zeroMatrix()).to.be.equal(null);
+        expect(zeroMatrix([])).to.be.equal(null);
+    })
 });

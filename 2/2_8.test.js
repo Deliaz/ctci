@@ -31,4 +31,9 @@ describe('2.8 Loop detection', () => {
             expect(loopDetection(list)).to.be.equal(false);
         });
     });
+
+    it('should return null for wrong args', () => {
+        expect(loopDetection1()).to.be.equal(null);
+        expect(loopDetection2()).to.be.equal(null);
+    });
 });

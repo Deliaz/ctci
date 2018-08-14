@@ -72,4 +72,7 @@ describe('2.3 Delete node', () => {
         });
     });
 
+    it('should return null for wrong args', () => {
+        expect(deleteNode()).to.be.equal(null);
+    });
 });

@@ -84,4 +84,20 @@ describe('2.2 Return Kth to the last', () => {
         const kth = find2(list, 0);
         expect(kth.data).to.equal(7);
     });
+
+    it('should return null for unexisted node', () => {
+        const list = new LinkedList(1);
+        list.append(2);
+        list.append(3);
+        list.append(4);
+        list.append(5);
+
+        const kth = find2(list, 6);
+        expect(kth).to.equal(null);
+    });
+
+    it('should return null for wrong args', () => {
+        expect(find()).to.be.equal(null);
+        expect(find2()).to.be.equal(null);
+    });
 });

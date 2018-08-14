@@ -42,4 +42,9 @@ describe('2.7 Intersection', () => {
             expect(intersection(list1, list2)).to.be.equal(false);
         });
     });
+
+    it('should return null for wrong args', () => {
+        expect(intersection1()).to.be.equal(null);
+        expect(intersection2()).to.be.equal(null);
+    });
 });

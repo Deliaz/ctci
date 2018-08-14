@@ -53,4 +53,8 @@ describe('2.6 Is Palindrome', () => {
         expect(isPalindrome(list)).to.be.equal(false);
     });
 
+    it('should return null for wrong args', () => {
+        expect(isPalindrome()).to.be.equal(null);
+    });
+
 });

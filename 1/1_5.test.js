@@ -5,6 +5,7 @@ const {oneAway} = require('./1_5');
 describe('1.5 One Away', () => {
     it('should return true', () => {
         expect(oneAway('pale', 'ple')).to.be.true;
+        expect(oneAway('ple', 'pale')).to.be.true;
         expect(oneAway('pales', 'pale')).to.be.true;
         expect(oneAway('pale', 'bale')).to.be.true;
         expect(oneAway('paaaa', 'paaak')).to.be.true;

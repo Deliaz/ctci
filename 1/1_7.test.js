@@ -143,4 +143,14 @@ describe('1.7 Matrix rotation', () => {
                                          [13, 14, 15, 16]]);
         // @formatter:on
     });
+
+    it('should return null as error for non-square matrix', () => {
+        expect(rotateMatrix([1, 2, 3], [4, 5, 6])).to.be.equal(null);
+        expect(rotateMatrix2([1, 2, 3], [4, 5, 6])).to.be.equal(null);
+    });
+
+    it('should return same matrix for single-sized array', () => {
+        expect(rotateMatrix([[5]])).to.be.deep.equal([[5]]);
+        expect(rotateMatrix2([[5]])).to.be.deep.equal([[5]]);
+    })
 });

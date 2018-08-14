@@ -38,8 +38,8 @@ module.exports = {
      * @returns {number|null}
      */
     find2(node, k) {
-        if (node === null) {
-            return 0;
+        if (!node) {
+            return null;
         }
 
         let p1 = node;
