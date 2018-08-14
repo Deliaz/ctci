@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./**/*.test.js"
+    "test": "nyc mocha ./**/*.test.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/Deliaz/ctci#readme",
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "nyc": "^12.0.2"
   },
   "dependencies": {
