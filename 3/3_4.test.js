@@ -3,7 +3,7 @@ const QueueViaStacks = require('./3_4');
 
 
 describe('3.4 Queue Via Stacks', () => {
-    it('', () => {
+    it('should act like a queue', () => {
         const queue = new QueueViaStacks();
 
         expect(queue.isEmpty()).to.be.true;
@@ -24,7 +24,7 @@ describe('3.4 Queue Via Stacks', () => {
         expect(queue.isEmpty()).to.be.true;
     });
 
-    it('', () => {
+    it('should support adding jobs on the fly', () => {
         const queue = new QueueViaStacks();
 
         queue.add('1');
