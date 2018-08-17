@@ -13,9 +13,17 @@ describe('3.4 Sort Stack', () => {
         stack.push(4);
         stack.push(1);
 
-        const sorted = sortStack(stack);
+        sortStack(stack);
 
-        expect(sorted._stack).to.be.deep.equal([7, 6, 5, 4, 3, 2, 1]);
+        expect(stack._stack).to.be.deep.equal([7, 6, 5, 4, 3, 2, 1]);
+    });
+
+    it('should sort the stack with one element', () => {
+        const stack = new Stack();
+        stack.push(1);
+
+        sortStack(stack);
+        expect(stack._stack).to.be.deep.equal([1]);
     });
 
     it('should return null for wrong args', () => {
