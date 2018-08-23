@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const Stack = require('./Stack');
 const sortStack = require('./3_5');
 
-describe('3.4 Sort Stack', () => {
+describe('3.5 Sort Stack', () => {
     it('should sort the stack', () => {
         const stack = new Stack();
         stack.push(5);

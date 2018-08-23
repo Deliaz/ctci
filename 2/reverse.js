@@ -1,3 +1,5 @@
+const printLinkedList = require('print-linked-list');
+
 /**
  * Reverse singly linked list
  * @param list {LinkedList}
@@ -17,6 +19,8 @@ module.exports = function (list) {
         prev = node;
         node = save;
     }
+
+    printLinkedList(prev, {valueName: 'data'});
 
     return prev;
 };

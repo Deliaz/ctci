@@ -22,7 +22,8 @@
     "nyc": "^12.0.2"
   },
   "dependencies": {
+    "chai": "4.1",
     "mocha": "^5.0.5",
-    "chai": "4.1"
+    "print-linked-list": "^1.0.4"
   }
 }
